@@ -80,18 +80,6 @@ for (let i = 0; i < handleNames.length; i++) {
 const ufile = 'Users.json';
 const tfile = 'Tweets.json';
 
-jsonfile.writeFileSync(ufile, udata, function(err) {
-  if (err) {
-    console.error(err);
-  } else {
-    console.log('data created successfully');
-  }
-});
+jsonfile.writeFileSync(ufile, udata, {});
 
-jsonfile.writeFileSync(tfile, tdata, function(err) {
-  if (err) {
-    console.error(err);
-  } else {
-    console.log('data created successfully');
-  }
-});
+jsonfile.writeFileSync(tfile, tdata, {});

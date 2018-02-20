@@ -1,11 +1,7 @@
 {
-  "name": "serverless-graphql",
+  "name": "intecoo-serverless-graphql",
   "version": "0.0.0",
   "private": true,
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:serverless/serverless-graphql.git"
-  },
   "scripts": {
     "test": "jest",
     "dynamodb-generate-seed-data": "cd seed-data && node create_seed_data.js",
