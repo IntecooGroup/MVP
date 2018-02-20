@@ -41,7 +41,7 @@ export const UserQuery = gql`
       description
       followers_count
       friends_count
-      tweets {
+      tweets(limit: 20) {
         items {
           tweet
         }
