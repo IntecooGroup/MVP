@@ -9,14 +9,7 @@ const udata = [];
 const tdata = [];
 const handleNames = [];
 
-faker.seed(1000);
-
-for (let i = 0; i < numUsers; i++) {
-  const handle = faker.internet.userName();
-  handleNames.push(handle);
-}
-
-for (let i = 0; i < handleNames.length; i++) {
+function generateUser(userIndex) {
   const following = [];
 
   //create user info
@@ -44,7 +37,7 @@ for (let i = 0; i < handleNames.length; i++) {
   const description = faker.name.jobTitle();
 
   const userInfo = {
-    handle: handleNames[i],
+    handle: handleNames[userIndex],
     name: name,
     location: location,
     description: description,
@@ -54,26 +47,40 @@ for (let i = 0; i < handleNames.length; i++) {
     following: following,
   };
 
-  udata.push(userInfo);
+  return userInfo;
+}
 
+function generateTweet(userIndex) {
+  return {
+    handle: handleNames[userIndex],
+    tweet_id: faker.random.uuid(),
+    tweet: faker.lorem.sentence(),
+    retweeted: faker.random.boolean(),
+    retweet_count: faker.random.number({
+      min: 1,
+      max: 50,
+    }),
+    favorited: faker.random.boolean(),
+    created_at: faker.date.between('2016-01-01', '2017-01-27'),
+  };
+}
+
+faker.seed(1000);
+
+for (let i = 0; i < numUsers; i++) {
+  const handle = faker.internet.userName();
+  handleNames.push(handle);
+}
+if (handleNames.indexOf('LeoDiCaprio') < 0) {
+  handleNames.push('LeoDiCaprio');
+}
+
+for (let i = 0; i < handleNames.length; i++) {
+  //create user info
+  udata.push(generateUser(i));
   //create tweet info
   for (let j = 0; j < tweetsPerUser; j++) {
-    const id = faker.random.uuid();
-
-    const tweetInfo = {
-      handle: handleNames[i],
-      tweet_id: id,
-      tweet: faker.lorem.sentence(),
-      retweeted: faker.random.boolean(),
-      retweet_count: faker.random.number({
-        min: 1,
-        max: 50,
-      }),
-      favorited: faker.random.boolean(),
-      created_at: faker.date.between('2016-01-01', '2017-01-27'),
-    };
-
-    tdata.push(tweetInfo);
+    tdata.push(generateTweet(i));
   }
 }
 

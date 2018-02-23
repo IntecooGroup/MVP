@@ -1,4 +1,4 @@
-service: intecoo-serverless-graphql
+service: intecoo-graphql
 
 frameworkVersion: ">=1.21.0 <2.0.0"
 
