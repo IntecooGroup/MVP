@@ -1,0 +1,192 @@
+[
+  {
+    "id": "481dddc1-0576-43a6-bc74-65c58ee70f5f",
+    "name": "Kulas, Price and McDermott",
+    "description": "Total 5th generation database",
+    "website": "https://google.com",
+    "location": "https://goo.gl/maps/peJgpiKGiCK2",
+    "offers": [
+      {
+        "id": "a319f075-dd30-4056-a3dd-93cbe6020be1",
+        "name": "Licensed Fresh Computer",
+        "description":
+          "Vero non et esse expedita doloremque voluptatum voluptatibus illum laboriosam.",
+        "website": "https://google.com",
+        "location": "https://goo.gl/maps/peJgpiKGiCK2",
+        "hashtags": ["#labore", "#nihil", "#sunt"],
+        "terms": ["non-refundable", "limit one per customer"]
+      },
+      {
+        "id": "5d0dd0a9-cd83-4e0e-90f1-b3b20b46be12",
+        "name": "Licensed Cotton Mouse",
+        "description": "Qui eligendi pariatur.",
+        "website": "https://google.com",
+        "location": "https://goo.gl/maps/peJgpiKGiCK2",
+        "hashtags": ["#totam", "#dolor", "#consequuntur"],
+        "terms": ["non-refundable", "limit one per customer"]
+      },
+      {
+        "id": "feee51a0-a7a9-414a-af33-839e712e3f25",
+        "name": "Incredible Steel Bike",
+        "description": "Non accusantium error voluptatum.",
+        "website": "https://google.com",
+        "location": "https://goo.gl/maps/peJgpiKGiCK2",
+        "hashtags": ["#odio", "#architecto", "#quia"],
+        "terms": ["non-refundable", "limit one per customer"]
+      }
+    ],
+    "testItem": true
+  },
+  {
+    "id": "54bab3a7-e2f3-4131-900e-9f76c1720ea7",
+    "name": "Dooley Inc",
+    "description": "Pre-emptive human-resource product",
+    "website": "https://google.com",
+    "location": "https://goo.gl/maps/peJgpiKGiCK2",
+    "offers": [
+      {
+        "id": "cbb3b8c3-a6fc-4146-9c77-eaa6ae548009",
+        "name": "Ergonomic Rubber Sausages",
+        "description":
+          "Architecto voluptatem non est porro facilis dolorum natus.",
+        "website": "https://google.com",
+        "location": "https://goo.gl/maps/peJgpiKGiCK2",
+        "hashtags": ["#facere", "#sunt", "#qui"],
+        "terms": ["non-refundable", "limit one per customer"]
+      },
+      {
+        "id": "4ccba817-3747-41da-810e-f278cfa1842f",
+        "name": "Gorgeous Steel Table",
+        "description": "Natus asperiores vel culpa voluptatem.",
+        "website": "https://google.com",
+        "location": "https://goo.gl/maps/peJgpiKGiCK2",
+        "hashtags": ["#amet", "#qui", "#voluptatem"],
+        "terms": ["non-refundable", "limit one per customer"]
+      },
+      {
+        "id": "edd11e20-a09d-4fcb-9c63-583a4038d7e5",
+        "name": "Generic Plastic Bacon",
+        "description": "Nobis doloremque est quia est quis qui a eos sit.",
+        "website": "https://google.com",
+        "location": "https://goo.gl/maps/peJgpiKGiCK2",
+        "hashtags": ["#error", "#blanditiis", "#eum"],
+        "terms": ["non-refundable", "limit one per customer"]
+      }
+    ],
+    "testItem": true
+  },
+  {
+    "id": "b6352f27-33b6-46eb-b263-9dc0e38d8a44",
+    "name": "Schuster Group",
+    "description": "Devolved bifurcated intranet",
+    "website": "https://google.com",
+    "location": "https://goo.gl/maps/peJgpiKGiCK2",
+    "offers": [
+      {
+        "id": "c720952d-6151-4dc2-a820-3b4859c73718",
+        "name": "Ergonomic Cotton Pants",
+        "description": "Ut commodi eum praesentium laborum quam nostrum.",
+        "website": "https://google.com",
+        "location": "https://goo.gl/maps/peJgpiKGiCK2",
+        "hashtags": ["#sequi", "#repellat", "#quibusdam"],
+        "terms": ["non-refundable", "limit one per customer"]
+      },
+      {
+        "id": "6ae34455-ff10-4eaf-b5ee-3edf8109ec3b",
+        "name": "Generic Fresh Chicken",
+        "description": "Nihil rerum nihil.",
+        "website": "https://google.com",
+        "location": "https://goo.gl/maps/peJgpiKGiCK2",
+        "hashtags": ["#neque", "#aut", "#accusantium"],
+        "terms": ["non-refundable", "limit one per customer"]
+      },
+      {
+        "id": "3f92adb0-d0d1-4aa6-b265-fb343b75408d",
+        "name": "Practical Cotton Pants",
+        "description":
+          "Aut possimus possimus officiis necessitatibus aut commodi sunt totam.",
+        "website": "https://google.com",
+        "location": "https://goo.gl/maps/peJgpiKGiCK2",
+        "hashtags": ["#saepe", "#veritatis", "#in"],
+        "terms": ["non-refundable", "limit one per customer"]
+      }
+    ],
+    "testItem": true
+  },
+  {
+    "id": "4068e656-d83c-4aae-b1bb-f5295b5616d3",
+    "name": "Bosco, McCullough and Boehm",
+    "description": "Virtual actuating Graphical User Interface",
+    "website": "https://google.com",
+    "location": "https://goo.gl/maps/peJgpiKGiCK2",
+    "offers": [
+      {
+        "id": "297f1aa5-38c3-42fd-a214-f8e58f0ddbe1",
+        "name": "Generic Soft Ball",
+        "description": "Recusandae nihil sit reiciendis voluptatem.",
+        "website": "https://google.com",
+        "location": "https://goo.gl/maps/peJgpiKGiCK2",
+        "hashtags": ["#sed", "#aliquid", "#est"],
+        "terms": ["non-refundable", "limit one per customer"]
+      },
+      {
+        "id": "d908a88c-591a-426a-b0f0-175840984121",
+        "name": "Intelligent Metal Towels",
+        "description": "Voluptatum repellendus magni tenetur praesentium.",
+        "website": "https://google.com",
+        "location": "https://goo.gl/maps/peJgpiKGiCK2",
+        "hashtags": ["#et", "#rerum", "#asperiores"],
+        "terms": ["non-refundable", "limit one per customer"]
+      },
+      {
+        "id": "85367688-cc44-466c-b181-af7ab8f11fcc",
+        "name": "Practical Granite Ball",
+        "description":
+          "Voluptatibus placeat ratione velit iure doloribus libero.",
+        "website": "https://google.com",
+        "location": "https://goo.gl/maps/peJgpiKGiCK2",
+        "hashtags": ["#quaerat", "#numquam", "#ut"],
+        "terms": ["non-refundable", "limit one per customer"]
+      }
+    ],
+    "testItem": true
+  },
+  {
+    "id": "80efd882-2e0f-41db-a666-a04e9fbcdc68",
+    "name": "Dickens, Dickinson and Friesen",
+    "description": "Progressive attitude-oriented service-desk",
+    "website": "https://google.com",
+    "location": "https://goo.gl/maps/peJgpiKGiCK2",
+    "offers": [
+      {
+        "id": "71e52a8b-13a7-43a2-93f5-8cace08b1893",
+        "name": "Practical Frozen Cheese",
+        "description":
+          "Doloribus sunt eos repellendus occaecati architecto ratione ut numquam ut.",
+        "website": "https://google.com",
+        "location": "https://goo.gl/maps/peJgpiKGiCK2",
+        "hashtags": ["#vel", "#qui", "#voluptatem"],
+        "terms": ["non-refundable", "limit one per customer"]
+      },
+      {
+        "id": "5154ecca-dfab-43d3-a776-f273c02906bf",
+        "name": "Rustic Concrete Chicken",
+        "description": "Quasi blanditiis asperiores ut vel aspernatur.",
+        "website": "https://google.com",
+        "location": "https://goo.gl/maps/peJgpiKGiCK2",
+        "hashtags": ["#aspernatur", "#eum", "#sunt"],
+        "terms": ["non-refundable", "limit one per customer"]
+      },
+      {
+        "id": "8a9ec018-170d-462e-8899-6ed23592b600",
+        "name": "Gorgeous Wooden Computer",
+        "description": "Doloremque quod in.",
+        "website": "https://google.com",
+        "location": "https://goo.gl/maps/peJgpiKGiCK2",
+        "hashtags": ["#error", "#aut", "#neque"],
+        "terms": ["non-refundable", "limit one per customer"]
+      }
+    ],
+    "testItem": true
+  }
+]

@@ -9,7 +9,8 @@ const docClient = new AWS.DynamoDB.DocumentClient();
 console.log('Importing data into DynamoDB. Please wait.');
 
 const allUsers = JSON.parse(fs.readFileSync('Users.json', 'utf8'));
-const allTweets = JSON.parse(fs.readFileSync('Tweets.json', 'utf8'));
+const allBrands = JSON.parse(fs.readFileSync('Brands.json', 'utf8'));
+const allInfluencers = JSON.parse(fs.readFileSync('Influencers.json', 'utf8'));
 
 allUsers.forEach(function(user) {
   const Userparams = {

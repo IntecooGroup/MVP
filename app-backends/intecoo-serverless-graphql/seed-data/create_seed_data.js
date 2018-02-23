@@ -1,92 +1,100 @@
 const faker = require('faker');
 const jsonfile = require('jsonfile');
 
-const numUsers = 10;
-const tweetsPerUser = 5;
-const followersPerUser = 2;
-
-const udata = [];
-const tdata = [];
-const handleNames = [];
-
-function generateUser(userIndex) {
-  const following = [];
-
-  //create user info
-  for (let k = 0; k < followersPerUser; k++) {
-    following.push(handleNames[Math.floor(Math.random() * handleNames.length)]);
-  }
-
-  const followers_count = faker.random.number({
-    min: 1,
-    max: 500,
-  });
-
-  const friends_count = faker.random.number({
-    min: 1,
-    max: 500,
-  });
-
-  const favourites_count = faker.random.number({
-    min: 1,
-    max: 5000,
-  });
-
-  const name = faker.name.findName();
-  const location = faker.address.city();
-  const description = faker.name.jobTitle();
-
-  const userInfo = {
-    handle: handleNames[userIndex],
-    name: name,
-    location: location,
-    description: description,
-    followers_count: followers_count,
-    friends_count: friends_count,
-    favourites_count: favourites_count,
-    following: following,
-  };
-
-  return userInfo;
-}
-
-function generateTweet(userIndex) {
-  return {
-    handle: handleNames[userIndex],
-    tweet_id: faker.random.uuid(),
-    tweet: faker.lorem.sentence(),
-    retweeted: faker.random.boolean(),
-    retweet_count: faker.random.number({
-      min: 1,
-      max: 50,
-    }),
-    favorited: faker.random.boolean(),
-    created_at: faker.date.between('2016-01-01', '2017-01-27'),
-  };
-}
+const NUM_BRANDS = 5;
+const OFFERS_PER_BRAND = 3;
+const NUM_INFLUENCERS = 1;
+const NUM_USERS = 1;
+const NUM_ADMINS = 1;
 
 faker.seed(1000);
 
-for (let i = 0; i < numUsers; i++) {
-  const handle = faker.internet.userName();
-  handleNames.push(handle);
-}
-if (handleNames.indexOf('LeoDiCaprio') < 0) {
-  handleNames.push('LeoDiCaprio');
+var brandData = [];
+for (var i = 0; i < NUM_BRANDS; i++) {
+  brandData.push(generateBrand());
 }
 
-for (let i = 0; i < handleNames.length; i++) {
-  //create user info
-  udata.push(generateUser(i));
-  //create tweet info
-  for (let j = 0; j < tweetsPerUser; j++) {
-    tdata.push(generateTweet(i));
+var influencerData = [];
+for (var i = 0; i < NUM_INFLUENCERS; i++) {
+  influencerData.push(generateInfluencer());
+}
+
+var userData = [];
+for (var i = 0; i < NUM_USERS; i++) {
+  userData.push(generateUser(brandData, influencerData, false));
+}
+
+for (var i = 0; i < NUM_ADMINS; i++) {
+  userData.push(generateUser(brandData, influencerData, true));
+}
+
+const userFile = 'Users.json';
+const influencerFile = 'Influencers.json';
+const brandFile = 'Brands.json';
+
+jsonfile.writeFileSync(userFile, userData, {});
+jsonfile.writeFileSync(influencerFile, influencerData, {});
+jsonfile.writeFileSync(brandFile, brandData, {});
+
+function generateBrand() {
+  var offers = [];
+  for (var i = 0; i < OFFERS_PER_BRAND; i++) {
+    offers.push(generateOffer());
   }
+  return {
+    id: faker.random.uuid(),
+    name: faker.company.companyName(),
+    description: faker.company.catchPhrase(),
+    website: 'https://google.com',
+    location: 'https://goo.gl/maps/peJgpiKGiCK2',
+    offers: offers,
+    testItem: true,
+  };
 }
 
-const ufile = 'Users.json';
-const tfile = 'Tweets.json';
+function generateOffer() {
+  return {
+    id: faker.random.uuid(),
+    name: faker.commerce.productName(),
+    description: faker.lorem.sentence(),
+    website: 'https://google.com',
+    location: 'https://goo.gl/maps/peJgpiKGiCK2',
+    hashtags: [
+      '#' + faker.lorem.word(),
+      '#' + faker.lorem.word(),
+      '#' + faker.lorem.word(),
+    ],
+    terms: ['non-refundable', 'limit one per customer'],
+  };
+}
 
-jsonfile.writeFileSync(ufile, udata, {});
+function generateInfluencer() {
+  return {
+    id: faker.random.uuid(),
+    instagramHandle: '@food_mood_dude',
+    profilePhoto: 'https://i.imgur.com/9fK6vcW.jpg',
+    feed: [],
+    coupons: [],
+    testItem: true,
+  };
+}
 
-jsonfile.writeFileSync(tfile, tdata, {});
+function generateUser(brands, influencers, isAdmin) {
+  var permissions = {
+    intecooAdmin: isAdmin,
+    influencers: [
+      influencers[Math.floor(Math.random() * influencers.length)].id,
+    ],
+    brands: [brands[Math.floor(Math.random() * brands.length)].id],
+  };
+
+  return {
+    id: faker.random.uuid(),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    email: 'adamszaruga+intecootest@gmail.com',
+    password: 'tricksyhobbitses',
+    permissions: permissions,
+    testItem: true,
+  };
+}
