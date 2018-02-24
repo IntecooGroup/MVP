@@ -1,103 +1,75 @@
 const schema = `
 type Mutation {
-    # Create a tweet for a user
-    # consumer keys and tokens are not required for dynamo integration
-    createTweet(
-        tweet: String!,
-        consumer_key: String,
-        consumer_secret: String,
-        access_token_key: String,
-        access_token_secret: String,
-        created_at: String!
-    ): Tweet!
-
-    # Delete User Tweet
-    deleteTweet(
-        tweet_id: String!,
-        consumer_key: String,
-        consumer_secret: String,
-        access_token_key: String,
-        access_token_secret: String
-    ): Tweet!
-
-    # Retweet existing Tweet
-    reTweet(
-        tweet_id: String!,
-        consumer_key: String,
-        consumer_secret: String,
-        access_token_key: String,
-        access_token_secret: String
-    ): Tweet!
-
-    # Update existing Tweet
-    updateTweet(tweet_id: String!, tweet: String!): Tweet!
-
-    # Create user info is available in dynamo integration
-    updateUserInfo(
-        location: String!,
-        description: String!,
-        name: String!,
-        followers_count: Int!,
-        friends_count: Int!,
-        favourites_count: Int!,
-        following: [String!]!
-    ): User!
+    
 }
 
 type Query {
-    meInfo(consumer_key: String, consumer_secret: String): User!
-    getUserInfo(handle: String!, consumer_key: String, consumer_secret: String): User!
-
-    # search functionality is available in elasticsearch integration
-    searchAllTweetsByKeyword(keyword: String!): TweetConnection
+    influencer(id: ID, limit: Int): [Influencer!]!
+    brand(id: ID, limit: Int): [Brand!]!
+    user(id: ID, limit: String): [User!]!
 }
 
-type Subscription {
-    addTweet: Tweet
-        @aws_subscribe(mutations: ["createTweet"])
+type InstagramPost {
+    id: ID!
+    photo: String!
+    caption: String
+    createdAt: String!
+    profilePhoto: String!
+    tags: [String!]!
+    link: String!
+    location: String
 }
 
-type Tweet {
-    tweet_id: String!
-    tweet: String!
-    retweeted: Boolean
-    retweet_count: Int
-    favorited: Boolean
-    created_at: String!
+type Offer {
+    id: ID!
+    name: String
+    description: String
+    discount: String
+    website: String
+    location: String
+    hashtags: [String!]!
+    terms: [String!]!
 }
 
-type TweetConnection {
-    items: [Tweet!]!
-    nextToken: Token
+type Coupon {
+    brandId: ID!
+    offerId: ID!
+    instagramPostID: ID!
+    status: String!
+    redeemCount: Int!
 }
 
-input TokenInput {
-    tweet_id : String!
-    created_at: String!
-    handle: String!
+type Influencer {
+    id: ID!
+    instagramHandle: String!
+    profilePhoto: String!
+    feed: [InstagramPost!]!
+    coupons: [Coupon!]!
+    testItem: Boolean
 }
 
-type Token {
-    tweet_id : String!
-    created_at: String!
-    handle: String!
+type Brand {
+    id: ID!
+    name: String
+    description: String
+    website: String
+    location: String
+    offers: [Offer!]!
+    testItem: Boolean
 }
 
 type User {
-    name: String!
-    handle: String!
-    location: String!
-    description: String!
-    followers_count: Int!
-    friends_count: Int!
-    favourites_count: Int!
-    following: [String!]!
-    topTweet: Tweet
-    tweets(limit: Int!, nextToken: TokenInput): TweetConnection
-
-    # search functionality is available in elasticsearch integration
-    searchTweetsByKeyword(keyword: String!): TweetConnection
+    id: ID!
+    firstName: String
+    lastName: String
+    email: String!
+    password: String!
+    permissions: Permissions!
+    influencers: [Influencer!]!
+    brands: [Brand!]!
+    testItem: Boolean
 }
+
 
 schema {
     query: Query
